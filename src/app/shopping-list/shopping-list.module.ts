@@ -16,6 +16,4 @@ import { FormsModule } from "@angular/forms";
   ]
 })
 
-export class ShoppingListModule {
-
-}
+export class ShoppingListModule { }

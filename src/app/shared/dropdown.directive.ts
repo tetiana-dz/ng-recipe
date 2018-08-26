@@ -4,16 +4,17 @@ import { Directive, HostListener, HostBinding, ElementRef, ContentChild, Rendere
   selector: "[appDropdown]"
 })
 export class DropdownDirective {
+
   @HostBinding("class.show")
   @ContentChild('dropdown') dropdown: ElementRef;
   private isOpen = false;
 
   constructor(
     private renderer: Renderer2,
-  ) {
-  }
+  ) { }
 
   @HostListener("click")
+
   toggleOpen() {
     this.isOpen = !this.isOpen;
     if (this.isOpen) {

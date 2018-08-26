@@ -7,19 +7,25 @@ import { Subject } from "rxjs";
 @Injectable()
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>()
-  // recipeSelected = new EventEmitter<Recipe>();
+
   private recipes: Recipe[] = [
     new Recipe(
       "Spaghetti",
       "Om-nom-nom",
-      "https://www.soscuisine.com/media/images/recettes/very_large/48.jpg?lang=en",
-      [new Ingredient("Meat", 1), new Ingredient("French fries", 20)]
+      "https://images-gmi-pmc.edge-generalmills.com/d87c1237-c3e2-401a-b26b-9afc323e503f.jpg",
+      [new Ingredient("Meat", 1)]
     ),
     new Recipe(
       "Garbage plate",
       "Delicacy from upstate New York",
       "https://media-cdn.tripadvisor.com/media/photo-s/07/d0/d3/09/nick-tahou-hots.jpg",
       [new Ingredient("Meat", 1), new Ingredient("French fries", 20)]
+    ),
+    new Recipe(
+      "Tasty Burger",
+      "Come hungry. Leave happy.",
+      "http://www.monngon.tv/uploads/images/2017/06/22/056df664d44b28495605f3ee08485f20-lam-banh-mi-hamburger-sl.jpg",
+      [new Ingredient("Cheese", 2), new Ingredient("Tomatoes", 2)]
     )
   ];
 

@@ -31,6 +31,4 @@ import { AuthService } from "../auth/auth.service";
   ]
 })
 
-export class CoreModule {
-
-}
+export class CoreModule { }

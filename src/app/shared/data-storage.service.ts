@@ -11,11 +11,10 @@ import { AuthService } from "../auth/auth.service";
 
 export class DataStorageService {
 
-  constructor(private http: Http,
+  constructor(
+    private http: Http,
     private recipeService: RecipeService,
-    private authService: AuthService) {
-
-  }
+    private authService: AuthService) { }
 
   storeRecipes() {
     const token = this.authService.getToken();
@@ -28,10 +27,7 @@ export class DataStorageService {
 
 
     this.http.get('https://recipebook-d9ff3.firebaseio.com/recipes.json?auth=' + token)
-
-
       .pipe(map(
-
         (response: Response) => {
           const recipes: Recipe[] = response.json();
           for (let recipe of recipes) {
@@ -42,13 +38,11 @@ export class DataStorageService {
           return recipes;
         }
       ))
-
       .subscribe(
         (recipes: Recipe[]) => {
           this.recipeService.setRecipes(recipes);
         }
       )
-
   }
 
 }

@@ -4,21 +4,22 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
 
 
-
-
-
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
 export class RecipeEditComponent implements OnInit {
+
   id: number;
   editMode = false;
   recipeForm: FormGroup;
 
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private recipeService: RecipeService,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -26,7 +27,6 @@ export class RecipeEditComponent implements OnInit {
         this.id = +params['id'];
         this.editMode = params['id'] != null;
         this.initForm();
-
       }
     )
   }
