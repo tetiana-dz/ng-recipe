@@ -9,9 +9,7 @@ export class DropdownDirective {
   @ContentChild('dropdown') dropdown: ElementRef;
   private isOpen = false;
 
-  constructor(
-    private renderer: Renderer2,
-  ) { }
+  constructor(private renderer: Renderer2) { }
 
   @HostListener("click")
 
